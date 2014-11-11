@@ -1,0 +1,8 @@
+{
+  "fileName": "underscore-companion",
+  "globalAlias": "companion",
+  "exclude": ["underscore"],
+  "dependencies": {
+    "default": ["underscore"]
+  }
+}

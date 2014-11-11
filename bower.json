@@ -1,0 +1,15 @@
+{
+  "name": "underscore-companion.js",
+  "version": "0.0.1",
+  "dependencies": {
+    "underscore": "~1.6.0"
+  },
+  "ignore": [
+    "**/.*",
+    "Gruntfile.js",
+    "src",
+    "docs",
+    "test",
+    "build"
+  ]
+}

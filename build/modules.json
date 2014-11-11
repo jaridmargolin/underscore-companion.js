@@ -1,0 +1,4 @@
+{
+  "proclaim"   : "/node_modules/proclaim/lib/proclaim",
+  "underscore" : "/node_modules/underscore/underscore"
+}
