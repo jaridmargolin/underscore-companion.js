@@ -12,12 +12,13 @@ define(function (require) {
  * ---------------------------------------------------------------------------*/
 
 return {
-  decorate   : require('./decorate'),
-  deepMerge  : require('./deepMerge'),
-  delayApply : require('./delayApply'),
-  delayCall  : require('./delayCall'),
-  encase     : require('./encase'),
-  evaluate   : require('./evaluate')
+  bindPrototypes : require('./bindPrototypes'),
+  decorate       : require('./decorate'),
+  deepMerge      : require('./deepMerge'),
+  delayApply     : require('./delayApply'),
+  delayCall      : require('./delayCall'),
+  encase         : require('./encase'),
+  evaluate       : require('./evaluate')
 };
 
 

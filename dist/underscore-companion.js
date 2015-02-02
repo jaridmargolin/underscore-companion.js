@@ -15,11 +15,35 @@
 }(this, function (underscore) {
 
 /*!
+ * bindPrototypes.js
+ *
+ * Copyright (c) 2014
+ */
+var bindPrototypes, decorate, delayApply, delayCall, encase, evaluate, underscoreCompanion, _deepMerge_;
+bindPrototypes = function (_) {
+  /* -----------------------------------------------------------------------------
+   * bindPrototypes
+   * ---------------------------------------------------------------------------*/
+  /**
+   * Bind all object prototype functions. Rarely do we actually want to call
+   * a Class method without using the class as the context.
+   *
+   * @example
+   * _.bindPrototypes(this);
+   *
+   * @param {object} obj - Object to bind methods to.
+   */
+  return function (obj) {
+    var args = _.keys(Object.getPrototypeOf(obj));
+    args.unshift(obj);
+    _.bindAll.apply(_, args);
+  };
+}(underscore);
+/*!
  * decorate.js
  * 
  * Copyright (c) 2014
  */
-var decorate, delayApply, delayCall, encase, evaluate, underscoreCompanion, _deepMerge_;
 decorate = function (_) {
   /* -----------------------------------------------------------------------------
    * decorate
@@ -212,6 +236,7 @@ evaluate = function (_) {
  * Copyright (c) 2014
  */
 underscoreCompanion = {
+  bindPrototypes: bindPrototypes,
   decorate: decorate,
   deepMerge: _deepMerge_,
   delayApply: delayApply,

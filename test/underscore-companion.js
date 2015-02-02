@@ -17,6 +17,7 @@ define([
 describe('underscore-companion.js', function () {
 
   it('Should expose methods.', function () {
+    assert.ok(_.bindPrototypes);
     assert.ok(_.decorate);
     assert.ok(_.deepMerge);
     assert.ok(_.delayApply);
