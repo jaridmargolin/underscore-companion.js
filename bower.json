@@ -1,6 +1,6 @@
 {
   "name": "underscore-companion.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "dependencies": {
     "underscore": "~1.6.0"
   },
