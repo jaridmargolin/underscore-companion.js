@@ -15,15 +15,12 @@ define([
  * ---------------------------------------------------------------------------*/
 
 var decorator1 = function (fn, data) {
-  data['1'] = true;
+  data[0] = 1;
   fn(data);
 };
 
 var decorator2 = function (fn, data) {
-  if (data['1']) {
-    data['2'] = true;
-  }
-  
+  data[1] = 2;
   fn(data);
 };
 
@@ -36,10 +33,18 @@ describe('decorate.js', function () {
 
   it('Should call decorators in order.', function () {
     var fn = function (data) {
-      assert.deepEqual(data, { 1: true, 2: true });
+      assert.deepEqual(data, [1, 2]);
     };
 
-    decorate([decorator1, decorator2], fn)({});
+    decorate([decorator1, decorator2], fn)([]);
+  });
+
+  it('Should return original function if no decorators passed.', function () {
+    var fn = function (data) {
+      assert.deepEqual(data, []);
+    };
+
+    decorate([], fn)([]);
   });
 
 });

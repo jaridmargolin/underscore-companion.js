@@ -30,10 +30,10 @@ define([
 return function (decorators, original) {
   // Start at first decorator and work backwards
   var i = decorators.length;
-  var fn;
+  var fn = original;
 
   while((i--) > 0) {
-    fn = _.wrap(fn ? fn : original, decorators[i]);
+    fn = _.wrap(fn, decorators[i]);
   }
 
   return fn;
